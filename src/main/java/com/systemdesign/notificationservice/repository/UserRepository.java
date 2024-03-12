@@ -6,10 +6,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-
 @Repository
-public interface UserDataDao extends JpaRepository<User,Long> {
-    @Query("SELECT u.emailId from User u where u.userId = :userId")
-    String findEmailByUserId(@Param("userId")String userId);
-
+public interface UserRepository extends JpaRepository<User,Long> {
+    @Query("SELECT u.emailId FROM User u WHERE u.userId = :userId")
+    String findEmailByUserId(@Param("userId") String userId);
 }

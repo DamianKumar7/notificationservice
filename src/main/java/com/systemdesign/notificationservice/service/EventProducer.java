@@ -13,7 +13,7 @@ public class EventProducer {
     KafkaTemplate<String,Event> kafkaTemplate;
 
 
-    @Value("${kafka.topic}")
+    @Value("${spring.kafka.topic}")
     private String kafkaTopic;
 
     public void pushMessageToQueue(Event event) {
